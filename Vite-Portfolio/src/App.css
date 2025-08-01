@@ -1,0 +1,293 @@
+#root {
+  /* border: 2px solid red; */
+  color: rgb(255, 255, 255);
+  --bottom-margin: 10vh;
+  --green-neon: rgb(9, 255, 0);
+  --blue-neon: rgb(0, 255, 153);
+  --white-neon: rgb(255, 255, 255);
+  --glowing-shadow-green:       
+      0 0 5px #00ff00,
+      0 0 10px #00ff00,
+      0 0 20px #00ff00,
+      0 0 40px #00ff00;
+
+  --glowing-shadow-white:
+      0 0 5px #ffffff,
+      0 0 10px #ffffff,
+      0 0 20px #ffffff,
+      0 0 40px #ffffff;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: url('your-gif.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Global properties ------------------------- */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  line-height: 1.2;
+  /* text-shadow: var(--glowing-shadow-white); */
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  line-height: 1.2;
+  /* text-shadow: var(--glowing-shadow-white); */
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  line-height: 1.2;
+  color: rgb(255, 255, 255)
+}
+
+p {
+  /* text-shadow: var(--glowing-shadow-white); */
+}
+
+hr {
+  margin-top:1rem;
+  margin-bottom:3rem;
+  border: 1px solid rgb(255, 255, 255); 
+  object-fit: cover;
+  background-color: transparent;
+  /* box-shadow: 0 0 10px #0f0, 0 0 20px #0f0; */
+  box-shadow: var(--glowing-shadow-green);
+  width: 40vw;
+}
+
+.green-neon-text {
+  color: var(--green-neon);
+  text-shadow: var(--glowing-shadow-green)
+}
+
+.test-neon-text {
+  color: var(--white-neon);
+  text-shadow: var(--glowing-shadow-white)
+}
+
+.turquoise-neon-text {
+  color: var(--blue-neon);
+  text-shadow: var(--glowing-shadow-white)
+}
+
+.white-neon-text {
+  color: var(--white-neon);
+  text-shadow: var(--glowing-shadow-white)
+}
+
+.green-text {
+  color: rgb(0, 255, 0);
+  /* text-shadow: var(--glowing-shadow-green) */
+}
+
+.white-text {
+  color: rgb(255, 255, 255);
+  /* text-shadow: var(--glowing-shadow-green) */
+}
+
+/* All part of the header section --------------------------------------**/
+.header-section {
+  /* border: 2px solid red; */
+  /* margin: 0vh 0vw var(--bottom-margin) 0vw;  */
+  margin: 0vh 0vw 20vw 0vw; 
+}
+
+.top-links {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  margin-bottom: 30vh;
+
+  font-weight: bold;
+}
+
+.top-links img {
+  /* border: 2px solid red; */
+  height: 5vh;
+  width: auto;
+}
+
+.profile-circle {
+  width: 150px;
+  height: 150px;
+  border: 5px solid var(--green-neon); 
+  /* border-radius: 50%; */
+  object-fit: cover;
+  padding: 5px; 
+  background-color: transparent;
+  box-shadow: 0 0 10px var(--green-neon), 0 0 20px var(--green-neon);
+}
+
+.profile-pic {
+  /* border: 2px solid red; */
+  height: 15vh;
+  width: auto;
+}
+
+#full-name {
+  font-size: 4rem;
+}
+
+#mission-statement {
+  font-size: 1.3rem;
+}
+
+.links-section {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1vw;
+  
+}
+
+.links-section .icon {
+  height: 3vh;
+}
+
+.header-link {
+  /* border: 2px solid red; */
+  height: 5vh;
+  width: auto;
+}
+
+/* About me section --------------------------------------*/
+#about-section {
+  /* border: 2px solid red; */
+  margin: 0vh 0vw var(--bottom-margin) 0vw;
+}
+
+/* Skills section --------------------------------------*/
+.skills-section {
+  /* border: 2px solid red; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw; */
+  margin: 0vh 0vw var(--bottom-margin) 0vw;
+}
+
+.skills-list {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+
+.skill-link {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 255, 0, 0.3);
+} 
+
+.skill-link:hover img {
+  transform: scale(1.1);
+}
+
+.skill-image {
+  /* border: 2px solid red; */
+  height: 7vh;
+  display: block;
+  transition: transform 0.3s ease;
+} 
+
+
+/* Projects section --------------------------------------*/
+.projects-section {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+}
+
+#autoply-container{
+  text-align: left
+}
+
+#autoply-container .inner-container {
+  /* border: 2px solid red; */
+  display: flex;
+  height: fit-content;
+}
+
+#autoply-video {
+  /* border: 2px solid red; */
+}
+
+#autoply-description {
+  /* border: 2px solid red; */
+  text-align: right;
+  height: 30%;
+  margin: 0vh 1vw 0vh 1vw;
+
+}
+
+#rollinghigh-container {
+  text-align: right
+}
+
+#rollinghigh-container .inner-container {
+  /* border: 2px solid red; */
+  display: flex;
+  height: fit-content;
+}
+
+#rolling-high-video {
+  /* border: 2px solid red; */
+}
+
+#rollinghigh-description {
+  text-align: left;
+  margin: 0vh 1vw 0vh 1vw;
+}
+
+.contact-section {
+  /* border: 2px solid red; */
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
