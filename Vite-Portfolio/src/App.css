@@ -3,19 +3,35 @@
   color: rgb(255, 255, 255);
   --bottom-margin: 10vh;
   --green-neon: rgb(9, 255, 0);
-  --blue-neon: rgb(0, 255, 153);
+  --turquoise-neon: rgb(0, 255, 153);
+  --yellow-neon: rgb(255, 230, 0);
+  --hotpink-neon: rgb(255, 11, 88);
   --white-neon: rgb(255, 255, 255);
   --glowing-shadow-green:       
       0 0 5px #00ff00,
       0 0 10px #00ff00,
       0 0 20px #00ff00,
       0 0 40px #00ff00;
-
+  --glowing-shadow-yellow:
+      0 0 5px rgb(255, 230, 0),
+      0 0 10px rgb(255, 230, 0),
+      0 0 20px rgb(255, 230, 0),
+      0 0 40px rgb(255, 230, 0);
+  --glowing-shadow-hotpink:
+      0 0 2px #ff0080,
+      0 0 5px #ff0080,
+      0 0 10px #ff0080,
+      0 0 20px #ff0080;
   --glowing-shadow-white:
       0 0 5px #ffffff,
       0 0 10px #ffffff,
       0 0 20px #ffffff,
       0 0 40px #ffffff;
+  --glowing-shadow-light-white:
+      0 0 2px #ffffff,
+      0 0 5px #ffffff,
+      0 0 10px #ffffff,
+      0 0 20px #ffffff;
 }
 
 body {
@@ -60,9 +76,19 @@ hr {
   border: 1px solid rgb(255, 255, 255); 
   object-fit: cover;
   background-color: transparent;
-  /* box-shadow: 0 0 10px #0f0, 0 0 20px #0f0; */
   box-shadow: var(--glowing-shadow-green);
   width: 40vw;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.hover-entity:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 4px #00ffbf);
+  transition: 0.2s ease;
 }
 
 .green-neon-text {
@@ -70,17 +96,34 @@ hr {
   text-shadow: var(--glowing-shadow-green)
 }
 
-.test-neon-text {
+.turquoise-neon-text {
+  color: var(--turquoise-neon);
+  text-shadow: var(--glowing-shadow-white)
+}
+
+.yellow-neon-text {
+  color: var(--yellow-neon);
+  text-shadow: var(--glowing-shadow-yellow);
+  font-weight: bold;
+}
+
+.hotpink-text {
+  color: rgb(255, 0, 162);
+  text-shadow: var(--glowing-shadow-hotpink)
+}
+
+
+.white-neon-text {
   color: var(--white-neon);
   text-shadow: var(--glowing-shadow-white)
 }
 
-.turquoise-neon-text {
-  color: var(--blue-neon);
-  text-shadow: var(--glowing-shadow-white)
+.light-white-neon-text {
+  color: white;
+  text-shadow: var(--glowing-shadow-light-white)
 }
 
-.white-neon-text {
+.test-neon-text {
   color: var(--white-neon);
   text-shadow: var(--glowing-shadow-white)
 }
@@ -93,6 +136,67 @@ hr {
 .white-text {
   color: rgb(255, 255, 255);
   /* text-shadow: var(--glowing-shadow-green) */
+}
+
+
+.glowing-border {
+  border: 1px solid var(--green-neon); 
+  /* border-radius: 50%; */
+  object-fit: cover;
+  padding: 5px; 
+  background-color: transparent;
+  box-shadow: 0 0 10px var(--green-neon), 0 0 20px var(--green-neon);
+}
+
+.glowing-circle-white {
+  border: 1px solid var(--white-neon); 
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 5px; 
+  background-color: transparent;
+  box-shadow: 0 0 10px var(--white-neon), 0 0 20px var(--white-neon);
+}
+
+.tv-static {
+  position: relative;
+
+  padding: 2rem;
+  min-height: 300px;
+  background-color: black;
+  overflow: hidden;
+
+  /* color: #00ffcc; */
+  font-family: monospace;
+  font-size: 2rem;
+  border-radius: 8px;
+}
+
+/* Static noise background — contained, doesn't affect layout */
+.tv-static::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-image: url('https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  z-index: 0;
+  opacity: 0.07;
+  pointer-events: none;
+
+  /* Prevent size interference */
+  display: block;
+}
+
+/* Make sure content appears on top of the static */
+.tv-static > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* All part of the header section --------------------------------------**/
@@ -153,8 +257,9 @@ hr {
 }
 
 .links-section .icon {
-  height: 3vh;
+  height: 2rem;
 }
+
 
 .header-link {
   /* border: 2px solid red; */
@@ -215,48 +320,94 @@ hr {
   /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-#autoply-container{
-  text-align: left
+.project-description-text {
+  /* border: 5px solid red; */
+  width: 1000px;
+  font-size: 1.3rem;
 }
 
-#autoply-container .inner-container {
-  /* border: 2px solid red; */
-  display: flex;
-  height: fit-content;
+.project-text, .project-name {
+  /* border: 5px solid red; */
+  /* text-align: left; */
 }
 
-#autoply-video {
-  /* border: 2px solid red; */
-}
-
-#autoply-description {
-  /* border: 2px solid red; */
-  text-align: right;
-  height: 30%;
-  margin: 0vh 1vw 0vh 1vw;
-
-}
-
-#rollinghigh-container {
-  text-align: right
-}
-
-#rollinghigh-container .inner-container {
-  /* border: 2px solid red; */
-  display: flex;
-  height: fit-content;
-}
-
-#rolling-high-video {
-  /* border: 2px solid red; */
-}
-
-#rollinghigh-description {
+.project-container {
   text-align: left;
-  margin: 0vh 1vw 0vh 1vw;
 }
+
+.project-header {
+  /* border: 5px solid red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#project-name {
+ 
+}
+
+.project-header #github-icon {
+  height: 2.5rem;
+  margin-right: 10px;
+}
+
+
+#project-title-break {
+  border: 1px solid rgb(255, 255, 255); 
+  object-fit: cover;
+  background-color: transparent;
+  /* box-shadow: 0 0 10px #0f0, 0 0 20px #0f0; */
+  box-shadow: var(--glowing-shadow-green);
+  width: 2rem;
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+
+#project-stack-break {
+  border: 1px solid rgb(255, 255, 255); 
+  object-fit: cover;
+  background-color: transparent;
+  /* box-shadow: 0 0 10px #0f0, 0 0 20px #0f0; */
+  box-shadow: var(--glowing-shadow-green);
+  width: 5rem;
+  margin-left: 5px;
+  margin-bottom: 1.5rem;
+}
+
+#project-video-break {
+  border: 1px solid rgb(255, 255, 255); 
+  object-fit: cover;
+  background-color: transparent;
+  box-shadow: var(--glowing-shadow-green);
+  width: 40rem;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+}
+
+#project-stack {
+
+}
+
+.project-description-div {
+  /* border: 5px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 800px; */
+}
+
+.project-description-text {
+  /* border: 5px solid red; */
+  width: 800px;
+}
+
+#autoply-container {
+  margin-bottom: 7rem;
+}
+
 
 .contact-section {
   /* border: 2px solid red; */
