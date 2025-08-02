@@ -1,5 +1,6 @@
 import React from "react";
 import githubLogo from "../assets/github_icon_2.svg";
+// import rollingHighMini from "../assets//webl_game/index.html";
 
 function ProjectVideo({id, link, title}) {
   return (
@@ -19,9 +20,9 @@ function ProjectVideo({id, link, title}) {
 
 function Project({containerName, projectName, stack, projectVideo, projectDescriptionId, projectDescription}) {
   return (    
-    <div id={containerName} className="project-container glowing-border">
+    <div id={containerName} className="project-container glowing-border-turquoise">
       <div className="project-header">
-        <h2 id="project-name"className="project-name green-neon-text">&gt;&gt;{projectName} </h2>
+        <h2 id="project-name"className="project-name turquoise-text">&gt;&gt; {projectName} </h2>
         <a href={"google.com"}>
           <img id="github-icon" src={githubLogo} className="github-icon glowing-circle-white hover-entity"></img>
         </a>
@@ -46,7 +47,7 @@ export default function Projects() {
   return (
     <section className="projects-section" >
       {/* <h1 className="project-text green-neon-text">&gt; Projects</h1> */}
-      <h1 className="project-text light-white-neon-text">&gt; Users / Caleb / Website / <span className="green-neon-text">Passion_Projects</span></h1>
+      <h1 className="project-text light-white-neon-text">&gt; Users / Caleb / <span className="turquoise-neon-text">Passion_Projects</span></h1>
       <hr></hr>
       <Project
         containerName="autoply-container"
@@ -76,8 +77,15 @@ export default function Projects() {
           title: "Rolling High Trailer"
         }}
         projectDescriptionId="rollinghigh-description"
-        projectDescription="RollingHigh.exe is a 3D endless runner that challenges players to navigate a fast-paced, ever-changing course using momentum-based ball rolling mechanics. As the player speeds forward, platforms continuously shift in shape, size, and position—demanding precise control, quick reflexes, and adaptability. Designed in Unity with C#, the game blends smooth physics with dynamic level design to create a high-intensity experience that rewards focus and flow. Whether dodging gaps or reacting to sudden terrain changes, players are pushed to stay sharp and roll with the chaos."
+        projectDescription= "  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
       />
+
+      <iframe
+        src="http://localhost:5173/webgl/index.html"
+        width="0"
+        height="0"
+        style={{ border: "none" }}
+      ></iframe>
 
     </section>
   );

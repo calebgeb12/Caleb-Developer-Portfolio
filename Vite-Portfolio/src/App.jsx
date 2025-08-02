@@ -1,8 +1,9 @@
 import React from "react";
 import Header from "./components/Header";
 import About from "./components/About";
-import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import WorkExperience from "./components/WorkExperience";
+import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import './App.css'
 
@@ -12,6 +13,7 @@ export default function App() {
       <Header />
       {/* <About /> */}
       <Projects />
+      <WorkExperience />
       <Skills />
       <Contact />
     </div>

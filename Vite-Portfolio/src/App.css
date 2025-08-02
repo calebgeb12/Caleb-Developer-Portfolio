@@ -34,12 +34,34 @@
       0 0 20px #ffffff;
 }
 
+
 body {
+  background-color: #000000;
+  color: #00ff00;
+  font-family: monospace;
   margin: 0;
-  height: 100vh;
-  background: url('your-gif.gif') no-repeat center center fixed;
-  background-size: cover;
+  padding: 2rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  animation: flicker 3s infinite;
 }
+
+/* High-contrast flicker */
+@keyframes flicker {
+  0%, 100% {
+    background-color: #000000;
+  }
+  25% {
+    background-color: #0f0f0f;
+  }
+  50% {
+    background-color: #1a1a1a;
+  }
+  75% {
+    background-color: #0c0c0c;
+  }
+}
+
 
 /* Global properties ------------------------- */
 h1 {
@@ -133,6 +155,11 @@ a {
   /* text-shadow: var(--glowing-shadow-green) */
 }
 
+.turquoise-text {
+  color: rgb(0, 255, 128);
+  /* text-shadow: var(--glowing-shadow-green) */
+}
+
 .white-text {
   color: rgb(255, 255, 255);
   /* text-shadow: var(--glowing-shadow-green) */
@@ -146,6 +173,15 @@ a {
   padding: 5px; 
   background-color: transparent;
   box-shadow: 0 0 10px var(--green-neon), 0 0 20px var(--green-neon);
+}
+
+.glowing-border-turquoise {
+  border: 1px solid var(--turquoise-neon); 
+  /* border-radius: 50%; */
+  object-fit: cover;
+  padding: 5px; 
+  background-color: transparent;
+  box-shadow: 0 0 10px var(--turquoise-neon), 0 0 20px var(--turquoise-neon);
 }
 
 .glowing-circle-white {
@@ -321,6 +357,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* margin-botton: var(--bottom-margin); */
+  margin-bottom: 10vh;
 }
 
 .project-description-text {
@@ -385,6 +423,7 @@ a {
   width: 40rem;
   margin-top: 1rem;
   margin-bottom: .5rem;
+  margin-left: 5px;
 }
 
 #project-stack {
@@ -394,18 +433,59 @@ a {
 .project-description-div {
   /* border: 5px solid red; */
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   /* width: 800px; */
 }
 
 .project-description-text {
   /* border: 5px solid red; */
-  width: 800px;
+  width: 900px;
 }
 
 #autoply-container {
   margin-bottom: 7rem;
+}
+
+
+/* Work Experience section ----------------- */
+
+.experiences-section {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experience-container {
+  width: 1000px;
+  text-align: left;
+}
+
+.work-dates {
+  color: rgb(171, 169, 169);
+}
+
+#company-title-break {
+  border: 1px solid rgb(255, 255, 255); 
+  object-fit: cover;
+  background-color: transparent;
+  /* box-shadow: 0 0 10px #0f0, 0 0 20px #0f0; */
+  box-shadow: var(--glowing-shadow-green);
+  width: 16rem;
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+
+#position-title-break {
+  border: 1px solid rgb(255, 255, 255); 
+  object-fit: cover;
+  background-color: transparent;
+  /* box-shadow: 0 0 10px #0f0, 0 0 20px #0f0; */
+  box-shadow: var(--glowing-shadow-green);
+  width: 4rem;
+  margin-left: 5px;
+  margin-bottom: 0;
 }
 
 
